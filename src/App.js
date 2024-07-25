@@ -4,7 +4,11 @@ import React from 'react';
 import Navbar from './NavBar';
 import Background from './Background';
 import styled from 'styled-components';
-
+import pylogo from './images/py.jpeg';
+import javaLogo from './images/java.png';
+import html from './images/htm.png';
+import cs from './images/csss.png';
+import java from './images/vs.png'
 function App() {
   return (
     <div className="App">
@@ -18,7 +22,9 @@ function App() {
           of software development. I have extensive experience in testing software, back-end and front-end development, and debugging.
         </Description>
         <Tools>
-          Programming languages: Python, JavaScript, HTML, CSS, Java, C++, C, Bash, Ocaml, R<br />
+          Programming languages: Python <Image src={pylogo}/> JavaScript <Image src={javaLogo}/> 
+         HTML <Image src={html}/> CSS  <Image src={cs}/> 
+          Java <Image src={java}/> C++, C, Bash, Ocaml, R<br />
           Frameworks: React, Node.js, Flask, Django <br />
           Tools: Git, GitHub, VS Code, PostgreSQL, MongoDB, AWS
         </Tools>
@@ -26,6 +32,12 @@ function App() {
     </div>
   );
 }
+const Image = styled.img`
+  width: 20px;
+  height: 20px;
+  margin-left: 3px;
+  vertical-align: middle;
+`;
 
 const Tools = styled.p`
   text-align: left;
