@@ -2,45 +2,51 @@ import React from 'react';
 import styled from 'styled-components';
 
 const NavigationBar = styled.nav`
-background: #191714;
-padding: 1rem;
-display: flex;
-justify-content: center;
-align-items: center;
+  background: rgba(25, 23, 20, 0); /* Fully transparent background */
+  padding: 0.2rem 1rem; /* Adjust padding for a smaller navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.3s ease;
+    backdrop-filter: blur(10px); /* Apply blur effect */
 
-`
+`;
+
 const NavLinks = styled.div`
   display: flex;
   gap: 15rem;
-    @media (max-width: 768px) {
-    gap: 2rem; /* Reduced gap for tablets */
+  @media (max-width: 768px) {
+    gap: 2rem;
   }
   
   @media (max-width: 480px) {
-    gap: 1rem; /* Reduced gap for mobile devices */
-    flex-direction: column; /* Stack links vertically on small screens */
-    align-items: center; /* Center align the links */
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
 const NavLink = styled.a`
   color: white;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem; /* Adjust font size */
   position: relative;
   overflow: hidden;
-  padding: 0.5rem 1rem; /* Add some padding to the links for better visual effect */
+  padding: 0.5rem 1rem; /* Adjust padding for the links */
   transition: color 0.3s ease, text-shadow 0.3s ease;
   
   &:hover {
-    color: #gray; /* Change text color on hover */
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.7); /* Add a glow effect to the text */
-
+    color: gray;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
   }
   
   &:hover::before {
     transform: translate(-50%, -50%) scale(1);
-
   }
 
   & span {
@@ -50,17 +56,16 @@ const NavLink = styled.a`
 `;
 
 const Navbar = () => {
-    return (
-        <NavigationBar>
-
-            <NavLinks>
-                    <NavLink href="#home"> Home</NavLink>
-                    <NavLink href="#Projects"> Projects</NavLink>
-                    <NavLink href="Experience">Experience </NavLink>
-                    <NavLink href="#About"> About</NavLink>
-            </NavLinks>
-        </NavigationBar>
-    )
+  return (
+    <NavigationBar>
+      <NavLinks>
+        <NavLink href="#home">Home</NavLink>
+        <NavLink href="#Projects">Projects</NavLink>
+        <NavLink href="#Experience">Experience</NavLink>
+        <NavLink href="#About">About</NavLink>
+      </NavLinks>
+    </NavigationBar>
+  );
 }
 
 export default Navbar;
