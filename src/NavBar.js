@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const NavigationBar = styled.nav`
+  
   background: rgba(25, 23, 20, 0); /* Fully transparent background */
   padding: 0.2rem 1rem; /* Adjust padding for a smaller navbar */
   display: flex;

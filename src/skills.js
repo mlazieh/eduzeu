@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import pylogo from './images/py.jpeg';
+import pylogo from './images/pyy.png';
 import javaLogo from './images/java.png';
 import html from './images/htm.png';
-import cs from './images/csss.png';
+import cs from './images/css.png';
 import cplus from "./images/c++.png";
 import c from "./images/C_Logo.png";
-import mon from "./images/mongo.jpg";
-import sql from "./images/sq.jpeg";
+import mon from "./images/mongo.png";
+import sql from "./images/sq.png";
 import r from "./images/r.png";
 import java from "./images/vs.png"
 
@@ -65,16 +65,16 @@ const LanguagesContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 40px 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 40px;
+
 `;
 
 const Title = styled.h3`
-  margin-bottom: 20px;
+  margin-bottom: 38px;
   font-size: 24px;
-  font-weight: bold;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
 `;
 
 const ImagesContainer = styled.div`
@@ -111,11 +111,16 @@ const ImageWrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: 90px;
-  height: 70px;
-  transition: transform 0.3s;
+  font-family: 'Poppins', sans-serif;
+  width: 70px;
+  height: 55px;
+  transition: transform 0.3s, box-shadow 0.3s;
   border-radius: 50%;
-  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for 3D effect */
+  background: linear-gradient(to bottom right, #30cfd0, #330867); /* Gradient background */
+  padding: 10px; /* Space between image and border */
+  transform: scale(1); /* Initial scale */
+
   
   &:hover {
     transform: scale(1.2);
@@ -129,7 +134,7 @@ const Image = styled.img`
 const ImageName = styled.span`
   margin-top: 5px;
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
     
   &:hover {
     transform: scale(1.1);

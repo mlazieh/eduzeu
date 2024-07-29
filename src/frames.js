@@ -4,8 +4,7 @@ import yango from "./images/dj.png";
 import gh from "./images/git.png";
 import React from 'react';
 import styled from 'styled-components';
-import express from "./images/express-js.png";
-import flask from "./images/fla.jpg";
+import express from "./images/express.png";
 
 const Frameworks = React.forwardRef((props, ref) => (
     <LanguagesContainer ref={ref}>
@@ -45,11 +44,11 @@ const LanguagesContainer = styled.div`
 `;
 
 const Title = styled.h3`
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-size: 24px;
-  font-weight: bold;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  margin-top: -5px;
 `;
 
 const ImagesContainer = styled.div`
@@ -84,12 +83,16 @@ const ImageWrapper = styled.div`
     width: 100%; /* Fit 1 item per row on very small screens */
   }
 `;
-
 const Image = styled.img`
-  width: 90px;
-  height: 70px;
+  font-family: 'Poppins', sans-serif;
+  width: 70px;
+  height: 55px;
   transition: transform 0.3s;
   border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for 3D effect */
+  background: linear-gradient(to bottom right, #30cfd0, #330867); /* Gradient background */
+  padding: 10px; /* Space between image and border */
+
   
   &:hover {
     transform: scale(1.2);
@@ -103,7 +106,7 @@ const Image = styled.img`
 const ImageName = styled.span`
   margin-top: 5px;
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
     
   &:hover {
     transform: scale(1.1);
