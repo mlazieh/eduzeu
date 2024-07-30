@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Navbar from './NavBar';
 import Background from './Background';
@@ -7,13 +7,25 @@ import { FaArrowDown } from 'react-icons/fa';
 import ProgrammingLanguages from './skills';
 import Frameworks from './frames';
 import Typewriter from 'react-typewriter-effect';
+import { isVisible } from '@testing-library/user-event/dist/utils';
 
 function App() {
   const programmingLanguagesRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   const scrollToSection = () => {
-    programmingLanguagesRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Delay scrolling to ensure the content is visible
+    setTimeout(() => {
+      if (programmingLanguagesRef.current) {
+        programmingLanguagesRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100); // Adjust the delay if needed
   };
+
+  const handleScrollButtonClisk  = () => {
+    setIsVisible(true);
+    scrollToSection();
+  }
 
   return (
     <div className="App">
@@ -41,11 +53,15 @@ function App() {
           and programming concepts. My passion for problem-solving drives me to excel in various aspects
           of software development. I have extensive experience in testing software, back-end and front-end development, and debugging.
         </Description>
-        <ScrollButton onClick={scrollToSection}>
+        <ScrollButton onClick={ handleScrollButtonClisk}>
           My Skillset <Arrow />
         </ScrollButton>
-        <ProgrammingLanguages ref={programmingLanguagesRef} />
+        {isVisible && (
+          <>
+          <ProgrammingLanguages ref={programmingLanguagesRef} />
         <Frameworks ref={programmingLanguagesRef} />
+        </>
+        )}
       </Background>
     </div>
   );
@@ -80,16 +96,16 @@ const Portrait = styled.img`
 
 const Description = styled.p`
   text-align: center;
-  padding: 0 90px;
+  padding: 0 300px;
   font-family: 'Poppins', sans-serif;
   font-size: 1.1rem; /* Adjust font size for better readability */
-  line-height: 1.5; /* Increased line height for readability */
+  line-height: 2.5; /* Increased line height for readability */
   margin-bottom: 25px; /* Ensure space below the description */
 `;
 
 const ScrollButton = styled.button`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   margin: 4px auto;
@@ -131,3 +147,6 @@ const Arrow = styled(FaArrowDown)`
 `;
 
 export default App;
+
+
+ 

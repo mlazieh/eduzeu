@@ -16,31 +16,45 @@ const ProgrammingLanguages = React.forwardRef((props, ref) => (
     <Title>Programming Languages</Title>
     <ImagesContainer>
       <ImageWrapper>
-        <Image src={pylogo} alt="Python" />
+      <StyledLink href="https://github.com/eduzeu/Python-code" target="_blank" rel="noopener noreferrer">
+          <Image src={pylogo} alt="Python" />
+        </StyledLink>
         <ImageName>Python</ImageName>
       </ImageWrapper>
       <ImageWrapper>
+      <StyledLink href="https://github.com/eduzeu/website" target="_blank" rel="noopener noreferrer">
         <Image src={javaLogo} alt="JavaScript" />
+        </StyledLink>
         <ImageName>JavaScript</ImageName>
       </ImageWrapper>
       <ImageWrapper>
+      <StyledLink href="https://github.com/eduzeu/website" target="_blank" rel="noopener noreferrer">
         <Image src={html} alt="HTML" />
+        </StyledLink>
         <ImageName>HTML</ImageName>
       </ImageWrapper>
       <ImageWrapper>
+      <StyledLink href="https://github.com/eduzeu/website" target="_blank" rel="noopener noreferrer">
         <Image src={cs} alt="CSS" />
+        </StyledLink>
         <ImageName>CSS</ImageName>
       </ImageWrapper>
       <ImageWrapper>
+      <StyledLink href="https://github.com/eduzeu/Java-code" target="_blank" rel="noopener noreferrer">
         <Image src={java} alt="Java" />
+        </StyledLink>
         <ImageName>Java</ImageName>
       </ImageWrapper>
       <ImageWrapper>
+      <StyledLink href="https://github.com/eduzeu/C-Code" target="_blank" rel="noopener noreferrer">
         <Image src={cplus} alt="C++" />
+        </StyledLink>
         <ImageName>C++</ImageName>
       </ImageWrapper>
       <ImageWrapper>
+      <StyledLink href="https://github.com/eduzeu/trivia" target="_blank" rel="noopener noreferrer">
         <Image src={c} alt="C" />
+        </StyledLink>
         <ImageName>C</ImageName>
       </ImageWrapper>
       <ImageWrapper>
@@ -130,6 +144,10 @@ const Image = styled.img`
     width: 70px; /* Adjust image size for smaller screens */
     height: 50px;
   }
+`;
+const StyledLink = styled.a`
+  text-decoration: none;
+  color: inherit;
 `;
 const ImageName = styled.span`
   margin-top: 5px;

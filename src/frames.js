@@ -11,7 +11,9 @@ const Frameworks = React.forwardRef((props, ref) => (
       <Title>Frameworks and Technologies </Title>
       <ImagesContainer>
         <ImageWrapper>
+        <StyledLink href="https://github.com/eduzeu/website" target="_blank" rel="noopener noreferrer">
           <Image src={react} alt="React" />
+          </StyledLink>
           <ImageName>React</ImageName>
         </ImageWrapper>
         <ImageWrapper>
@@ -19,11 +21,15 @@ const Frameworks = React.forwardRef((props, ref) => (
           <ImageName>Node.js</ImageName>
         </ImageWrapper>
         <ImageWrapper>
+        <StyledLink href="https://github.com/eduzeu/rest" target="_blank" rel="noopener noreferrer">
           <Image src={yango} alt="dja" />
+          </StyledLink>
           <ImageName>Django</ImageName>
         </ImageWrapper>
         <ImageWrapper>
+        <StyledLink href="https://github.com/eduzeu" target="_blank" rel="noopener noreferrer">
           <Image src={gh} alt="git" />
+          </StyledLink>
           <ImageName>Git</ImageName>
         </ImageWrapper>
         <ImageWrapper>
@@ -56,8 +62,13 @@ const ImagesContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: -11px;
+  margin-top: 29px;
   width: 60%;
+`;
+
+const StyledLink = styled.a`
+  text-decoration: none;
+  color: inherit;
 `;
 
 const ImageWrapper = styled.div`

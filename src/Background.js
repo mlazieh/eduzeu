@@ -7,7 +7,10 @@ const BackgroundContainer = styled.div`
   display: flex;
   flex-direction: column;
   color: white;
+  width: 100%;
   text-align: center;
+  overflow: hidden;
+  position: relative;
 `;
 
 const Background = ({ children }) => {
