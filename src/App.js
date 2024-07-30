@@ -8,6 +8,7 @@ import ProgrammingLanguages from './skills';
 import Frameworks from './frames';
 import Typewriter from 'react-typewriter-effect';
 import { isVisible } from '@testing-library/user-event/dist/utils';
+import SocialMedia from "./connect";
 
 function App() {
   const programmingLanguagesRef = useRef(null);
@@ -47,6 +48,7 @@ function App() {
               startDelay={1500}
             />
           </Degree>
+          <SocialMedia/>
         </Header>
         <Description>
           Hello! I am a Senior at Stevens Institute of Technology with a robust foundation in mathematical
@@ -86,12 +88,13 @@ const Header = styled.div`
 `;
 
 const Portrait = styled.img`
-  width: 180px;
-  height: 150px;
+  width: 195px;
+  height: 180px;
   margin: 0px 0;
   border-radius: 50%;
-  border: 5px solid white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  border: 5px solid transparent;
+    box-shadow: 10px rgba(0, 0, 0, 0.5); /* Adjust the shadow as needed */
+
 `;
 
 const Description = styled.p`

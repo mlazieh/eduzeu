@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BackgroundContainer = styled.div`
-  background: linear-gradient(to bottom, #000000, #130F40);
+  background: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);  
   min-height: 100vh;
   display: flex;
   flex-direction: column;
