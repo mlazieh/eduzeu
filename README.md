@@ -1,4 +1,4 @@
-## Hi there 👋
+## Welcome to my GitHub :)
 
 <div align="center">
   <img width=50% height="300" src="https://github-readme-stats.vercel.app/api/top-langs/?username=eduzeu&layout=compact&theme=radical" />
