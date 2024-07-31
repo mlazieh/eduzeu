@@ -1,13 +1,11 @@
 import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Navbar from './NavBar';
-import Background from './Background';
 import self from "./images/self.jpeg";
 import { FaArrowDown } from 'react-icons/fa';
 import ProgrammingLanguages from './skills';
 import Frameworks from './frames';
 import Typewriter from 'react-typewriter-effect';
-import { isVisible } from '@testing-library/user-event/dist/utils';
 import SocialMedia from "./connect";
 
 function App() {
@@ -23,51 +21,79 @@ function App() {
     }, 100); // Adjust the delay if needed
   };
 
-  const handleScrollButtonClisk  = () => {
+  const handleScrollButtonClick = () => {
     setIsVisible(true);
     scrollToSection();
   }
 
   return (
-    <div className="App">
+    <AppContainer>
       <Background>
         <Navbar />
-        <Header>
-          <Title>
-            <Typewriter
-              text="Eduardo Hernandez"
-              typeSpeed={50}
-              startDelay={500}
-            />
-          </Title>
-          <Portrait src={self} />
-          <Degree>
-            <Typewriter
-              text="Software Engineer"
-              typeSpeed={100}
-              startDelay={1500}
-            />
-          </Degree>
-          <SocialMedia/>
-        </Header>
-        <Description>
-          Hello! I am a Senior at Stevens Institute of Technology with a robust foundation in mathematical
-          and programming concepts. My passion for problem-solving drives me to excel in various aspects
-          of software development. I have extensive experience in testing software, back-end and front-end development, and debugging.
-        </Description>
-        <ScrollButton onClick={ handleScrollButtonClisk}>
-          My Skillset <Arrow />
-        </ScrollButton>
-        {isVisible && (
-          <>
-          <ProgrammingLanguages ref={programmingLanguagesRef} />
-        <Frameworks ref={programmingLanguagesRef} />
-        </>
-        )}
+        <Section>
+          <Header>
+            <Title>
+              <Typewriter
+                text="Eduardo Hernandez"
+                typeSpeed={50}
+                startDelay={500}
+                cursor={false} // Hide cursor after typing is done
+              />
+            </Title>
+            <Portrait src={self} />
+            <Degree>
+              <Typewriter
+                text="Software Engineer"
+                typeSpeed={100}
+                startDelay={1500}
+                cursor={false} // Hide cursor after typing is done
+              />
+            </Degree>
+            <SocialMedia />
+          </Header>
+          <Description>
+            Hello! I am a Senior at Stevens Institute of Technology with a robust foundation in mathematical
+            and programming concepts. My passion for problem-solving drives me to excel in various aspects
+            of software development. I have extensive experience in testing software, back-end and front-end development, and debugging.
+          </Description>
+          <ScrollButton onClick={handleScrollButtonClick}>
+            My Skillset <Arrow />
+          </ScrollButton>
+        </Section>
+        <Section ref={programmingLanguagesRef}>
+          {isVisible && (
+            <>
+              <ProgrammingLanguages />
+              <Frameworks />
+            </>
+          )}
+        </Section>
       </Background>
-    </div>
+    </AppContainer>
   );
 }
+
+const AppContainer = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
+const Background = styled.div`
+  background: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  margin-top: -48px;
+`;
+
+const Section = styled.div`
+  padding: 50px 0;
+`;
 
 const Title = styled.p`
   font-family: 'Poppins', sans-serif;
@@ -93,8 +119,7 @@ const Portrait = styled.img`
   margin: 0px 0;
   border-radius: 50%;
   border: 5px solid transparent;
-    box-shadow: 10px rgba(0, 0, 0, 0.5); /* Adjust the shadow as needed */
-
+  box-shadow: 10px rgba(0, 0, 0, 0.5); /* Adjust the shadow as needed */
 `;
 
 const Description = styled.p`
@@ -150,6 +175,3 @@ const Arrow = styled(FaArrowDown)`
 `;
 
 export default App;
-
-
- 

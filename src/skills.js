@@ -10,10 +10,18 @@ import mon from "./images/mongo.png";
 import sql from "./images/sq.png";
 import r from "./images/r.png";
 import java from "./images/vs.png"
+import Typewriter from 'react-typewriter-effect';
 
 const ProgrammingLanguages = React.forwardRef((props, ref) => (
   <LanguagesContainer ref={ref}>
-    <Title>Programming Languages</Title>
+    <Title>
+        <Typewriter
+              text= "Programming Languages"
+              typeSpeed={50}
+              startDelay={500}
+              cursor={false} // Hide cursor after typing is doneFrameworks and Technologies </Title>
+              />
+        </Title>
     <ImagesContainer>
       <ImageWrapper>
       <StyledLink href="https://github.com/eduzeu/Python-code" target="_blank" rel="noopener noreferrer">
@@ -86,7 +94,7 @@ const LanguagesContainer = styled.div`
 
 const Title = styled.h3`
   margin-bottom: 38px;
-  font-size: 24px;
+  font-size: 15px;
   color: white;
   font-family: 'Poppins', sans-serif;
 `;

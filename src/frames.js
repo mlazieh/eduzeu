@@ -5,10 +5,18 @@ import gh from "./images/git.png";
 import React from 'react';
 import styled from 'styled-components';
 import express from "./images/express.png";
+import Typewriter from 'react-typewriter-effect';
 
 const Frameworks = React.forwardRef((props, ref) => (
     <LanguagesContainer ref={ref}>
-      <Title>Frameworks and Technologies </Title>
+      <Title>
+        <Typewriter
+              text= "Frameworks and Technologies"
+              typeSpeed={50}
+              startDelay={500}
+              cursor={false} // Hide cursor after typing is doneFrameworks and Technologies </Title>
+              />
+        </Title>
       <ImagesContainer>
         <ImageWrapper>
         <StyledLink href="https://github.com/eduzeu/website" target="_blank" rel="noopener noreferrer">
@@ -51,7 +59,7 @@ const LanguagesContainer = styled.div`
 
 const Title = styled.h3`
   margin-bottom: 15px;
-  font-size: 24px;
+  font-size: 15px;
   color: white;
   font-family: 'Poppins', sans-serif;
   margin-top: -5px;
