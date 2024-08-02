@@ -121,6 +121,7 @@ const Background = styled.div`
    text-align: center;
   overflow: hidden;
   position: relative;
+
   `;
 
 const Section = styled.div`
@@ -132,6 +133,8 @@ const Title = styled.p`
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   font-weight: 600px;
+  margin-top: -40px;
+
 `;
 
 const Degree = styled.p`
