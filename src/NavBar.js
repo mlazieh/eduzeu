@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const NavigationBar = styled.nav`
   
-  background: rgba(25, 23, 20, 0); /* Fully transparent background */
+  background: rgba(22, 23, 20, 0); 
   padding: 0.2rem 1rem; /* Adjust padding for a smaller navbar */
   display: flex;
   justify-content: center;
@@ -14,7 +15,7 @@ const NavigationBar = styled.nav`
   width: 100%;
   z-index: 1000;
   transition: background 0.3s ease;
-    backdrop-filter: blur(10px); /* Apply blur effect */
+  backdrop-filter: blur(10px); /* Apply blur effect */
 
 `;
 
@@ -32,20 +33,21 @@ const NavLinks = styled.div`
   }
 `;
 
-const NavLink = styled.a`
+const StyledLink = styled(Link)`
   color: white;
   text-decoration: none;
-  font-size: 1rem; /* Adjust font size */
+  font-size: 1.1rem;
   position: relative;
   overflow: hidden;
-  padding: 0.5rem 1rem; /* Adjust padding for the links */
+  padding: 0.5rem 2rem;
   transition: color 0.3s ease, text-shadow 0.3s ease;
-  
+  font-weight: bold;
+
   &:hover {
-    color: gray;
+    color: #30cfd0;
     text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
   }
-  
+
   &:hover::before {
     transform: translate(-50%, -50%) scale(1);
   }
@@ -60,10 +62,10 @@ const Navbar = () => {
   return (
     <NavigationBar>
       <NavLinks>
-        <NavLink href="#home">Home</NavLink>
-        <NavLink href="#Projects">Projects</NavLink>
-        <NavLink href="#Experience">Experience</NavLink>
-        <NavLink href="#About">About</NavLink>
+        <StyledLink href="#home">Home</StyledLink>
+        <StyledLink href="#Projects">Projects</StyledLink>
+        <StyledLink to="/experience">Experience</StyledLink>
+        <StyledLink href="#About">Resume</StyledLink>
       </NavLinks>
     </NavigationBar>
   );

@@ -1,10 +1,10 @@
-import react from "./images/react.png";
-import nodej from "./images/node.png";
-import yango from "./images/dj.png";
-import gh from "./images/git.png";
+import react from "../images/react.png";
+import nodej from "../images/node.png";
+import yango from "../images/dj.png";
+import gh from "../images/git.png";
 import React from 'react';
 import styled from 'styled-components';
-import express from "./images/express.png";
+import express from "../images/express.png";
 import Typewriter from 'react-typewriter-effect';
 
 const Frameworks = React.forwardRef((props, ref) => (
@@ -22,7 +22,7 @@ const Frameworks = React.forwardRef((props, ref) => (
         <StyledLink href="https://github.com/eduzeu/website" target="_blank" rel="noopener noreferrer">
           <Image src={react} alt="React" />
           </StyledLink>
-          <ImageName>React</ImageName>
+          <ImageName> React</ImageName>
         </ImageWrapper>
         <ImageWrapper>
           <Image src={nodej} alt="node" />
@@ -124,9 +124,10 @@ const Image = styled.img`
 `;
 const ImageName = styled.span`
   margin-top: 5px;
-  font-size: 14px;
+  font-size: 15px;
   font-family: 'Poppins', sans-serif;
-    
+  font-weight: bold;
+
   &:hover {
     transform: scale(1.1);
   }

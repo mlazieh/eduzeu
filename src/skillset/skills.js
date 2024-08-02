@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import pylogo from './images/pyy.png';
-import javaLogo from './images/java.png';
-import html from './images/htm.png';
-import cs from './images/css.png';
-import cplus from "./images/c++.png";
-import c from "./images/C_Logo.png";
-import mon from "./images/mongo.png";
-import sql from "./images/sq.png";
-import r from "./images/r.png";
-import java from "./images/vs.png"
+import pylogo from '../images/pyy.png';
+import javaLogo from '../images/java.png';
+import html from '../images/htm.png';
+import cs from '../images/css.png';
+import cplus from "../images/c++.png";
+import c from "../images/C_Logo.png";
+import mon from "../images/mongo.png";
+import sql from "../images/sq.png";
+import r from "../images/r.png";
+import java from "../images/vs.png"
 import Typewriter from 'react-typewriter-effect';
 
 const ProgrammingLanguages = React.forwardRef((props, ref) => (
@@ -159,9 +159,11 @@ const StyledLink = styled.a`
 `;
 const ImageName = styled.span`
   margin-top: 5px;
-  font-size: 14px;
+  font-size: 15px;
   font-family: 'Poppins', sans-serif;
-    
+    font-weight: bold;
+
+  
   &:hover {
     transform: scale(1.1);
   }

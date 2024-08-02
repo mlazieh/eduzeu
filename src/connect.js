@@ -25,10 +25,11 @@ const Container = styled.div`
     gap: 25px; /* Adjust gap between images as needed */
     align-items: center; /* Center items vertically */
     height: 100px; /* Adjust height as needed to see the alignment effect */
+    margin-top: -25px;
 `;
 
 const Size = styled.img`
-    width: 4vw;
+    width: 2.2vw;
 `;
 
 const Link = styled.a`
