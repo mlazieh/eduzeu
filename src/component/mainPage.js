@@ -8,10 +8,15 @@ import ProgrammingLanguages from '../skillset/skills';
 import Frameworks from '../skillset/frames';
 import Typewriter from 'react-typewriter-effect';
 import SocialMedia from "../connect";
-
 const MainPage = () => {
   const programmingLanguagesRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    const { clientX: x, clientY: y } = e;
+    setMousePos({ x, y });
+  };
 
   const scrollToSection = () => {
     setTimeout(() => {
@@ -27,8 +32,9 @@ const MainPage = () => {
   };
 
   return (
-    <AppContainer>
+    <AppContainer onMouseMove={handleMouseMove}>
       <Background>
+        <GradientOverlay x={mousePos.x} y={mousePos.y} />
         <Navbar />
         <Section>
           <Header>
@@ -63,20 +69,43 @@ const MainPage = () => {
           </Container>
         </Section>
         <Section ref={programmingLanguagesRef}>
+        <SkillsContainer>
           {isVisible && (
-            <>
+            <>       
+             <GradientOverlay x={mousePos.x} y={mousePos.y} />
+
               <ProgrammingLanguages />
               <Frameworks />
             </>
           )}
+          </SkillsContainer>
         </Section>
       </Background>
     </AppContainer>
   );
 };
+const SkillsContainer = styled.div`
+
+  margin-top: -340px;
+  `;
+const GradientOverlay = styled.div`
+ position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at ${props => props.x}px ${props => props.y}px, rgba(0, 34, 68, 0.5) 0%, rgba(0, 34, 68, 0) 30%);
+  transition: background 0.1s;
+  mix-blend-mode: screen; /* Optional: To blend with background */
+`;
 
 const Container = styled.div`
-  margin-top: -300px;
+  width: 100%;
+  height: auto; /* Remove fixed height to avoid whitespace issues */
+  position: relative; /* Allows positioning adjustments */
+  top: -350px; /* Adjust this value to move the button up */
+  text-align: center; /* Center-align the content */
 `;
 
 const AppContainer = styled.div`
@@ -85,18 +114,14 @@ const AppContainer = styled.div`
 `;
 
 const Background = styled.div`
-  background: #002D62;
-  min-height: 150vh;
-  display: flex;
+  background: #002244;
+   display: flex;
   flex-direction: column;
   color: white;
-  width: 100%;
-  text-align: center;
+   text-align: center;
   overflow: hidden;
   position: relative;
-  margin-top: -48px;
-  height: 100%;
-`;
+  `;
 
 const Section = styled.div`
   padding: 50px 0;
