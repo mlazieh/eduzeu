@@ -72,7 +72,6 @@ const MainPage = () => {
         <SkillsContainer>
           {isVisible && (
             <>       
-             <GradientOverlay x={mousePos.x} y={mousePos.y} />
 
               <ProgrammingLanguages />
               <Frameworks />
@@ -89,7 +88,7 @@ const SkillsContainer = styled.div`
   margin-top: -340px;
   `;
 const GradientOverlay = styled.div`
- position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

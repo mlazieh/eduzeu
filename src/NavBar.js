@@ -62,8 +62,8 @@ const Navbar = () => {
   return (
     <NavigationBar>
       <NavLinks>
-        <StyledLink href="#home">Home</StyledLink>
-        <StyledLink href="#Projects">Projects</StyledLink>
+        <StyledLink to="/">Home</StyledLink>
+        <StyledLink to="/projects">Projects</StyledLink>
         <StyledLink to="/experience">Experience</StyledLink>
         <StyledLink href="#About">Resume</StyledLink>
       </NavLinks>
