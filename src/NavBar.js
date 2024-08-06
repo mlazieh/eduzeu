@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { NavLink } from 'react-router-dom'; // Import NavLink from react-router-dom
 
 const NavigationBar = styled.nav`
-  
   background: rgba(22, 23, 20, 0); 
   padding: 0.2rem 1rem; /* Adjust padding for a smaller navbar */
   display: flex;
@@ -16,7 +15,6 @@ const NavigationBar = styled.nav`
   z-index: 1000;
   transition: background 0.3s ease;
   backdrop-filter: blur(10px); /* Apply blur effect */
-
 `;
 
 const NavLinks = styled.div`
@@ -33,7 +31,7 @@ const NavLinks = styled.div`
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   color: white;
   text-decoration: none;
   font-size: 1.1rem;
@@ -52,6 +50,11 @@ const StyledLink = styled(Link)`
     transform: translate(-50%, -50%) scale(1);
   }
 
+  &.active {
+    color: #30cfd0;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+  }
+
   & span {
     position: relative;
     z-index: 1;
@@ -62,10 +65,10 @@ const Navbar = () => {
   return (
     <NavigationBar>
       <NavLinks>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/projects">Projects</StyledLink>
-        <StyledLink to="/experience">Experience</StyledLink>
-        <StyledLink href="#About">Resume</StyledLink>
+        <StyledLink exact to="/" activeClassName="active">Home</StyledLink>
+        <StyledLink to="/projects" activeClassName="active">Projects</StyledLink>
+        <StyledLink to="/experience" activeClassName="active">Experience</StyledLink>
+        <StyledLink to="/resume" activeClassName="active">Resume</StyledLink>
       </NavLinks>
     </NavigationBar>
   );

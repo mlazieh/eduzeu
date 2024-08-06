@@ -16,8 +16,7 @@ function Projects() {
                 <GradientOverlay x={mousePos.x} y={mousePos.y} />
                 <Navbar />
                 <Content>
-                    <Exp>Projects</Exp>
-                    <ExperienceDetails>
+                     <ExperienceDetails>
                         <ClickableBox>
                             <DateRange>Personal Website</DateRange>
                             <JobDescription>
@@ -56,6 +55,8 @@ function Projects() {
                                 multiple connections simultaneously, ensuring a smooth and interactive gaming experience for all participants.
                                 <ButtonContainer>
                                     <ScrollButton>C</ScrollButton>
+                                    <ScrollButton>Linux OS</ScrollButton>
+
                                 </ButtonContainer>
                             </JobDescription>
                         </ClickableBox>
@@ -102,12 +103,7 @@ const Content = styled.div`
   margin-left: 100px;
 `;
 
-const Exp = styled.p`
-  font-family: 'Poppins', sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-  color: white; /* Ensure text is visible against background */
-`;
+ 
 
 const ExperienceDetails = styled.div`
   display: flex;

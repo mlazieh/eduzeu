@@ -17,7 +17,6 @@ function Experience() {
                 <Navbar />
 
                 <Content>
-                    <Exp>Experience</Exp>
                     <ExperienceDetails>
                         <DateRange>May 2024 - August 2024</DateRange>
                         <JobDescription>
@@ -77,11 +76,17 @@ function Experience() {
                                     I worked as a Software Engineer Intern for a cybersecurity project called "Ethical Hacking Using C++"
                                     at Bergen Community College. Here, I wrote malware using C/C++. I used system calls to access low-level
                                     computer features, used sockets, pipes, and implemented keyloggers, trojans, and user-friendly mini-games 
-                                    in C++ to showcase cybersecurity practices.
+                                    in C++ to showcase cybersecurity practices. I also helped on the front end design to create a friendly 
+                                    website that would have suspicious links and adds that would crash the computer if clicked. 
                                 </DescriptionText>
                                 <ButtonContainer>
                                     <ScrollButton>C++</ScrollButton>
                                     <ScrollButton>C</ScrollButton>
+                                    <ScrollButton>HTML++</ScrollButton>
+                                    <ScrollButton>CSS</ScrollButton>
+                                    <ScrollButton>Javascript</ScrollButton>
+
+
                                 </ButtonContainer>
                             </ClickableBox>
                         </JobDescription>
@@ -128,20 +133,13 @@ const Content = styled.div`
   margin-top: 15px;
 `;
 
-const Exp = styled.p`
-  font-family: 'Poppins', sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-  color: white; /* Ensure text is visible against background */
-`;
-
 const ExperienceDetails = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr; /* Adjust the ratio as needed */
   gap: 50px; /* Space between columns */
   margin: 100px auto;
   max-width: 800px; /* Optional: To limit the maximum width */
-  margin-top: 10px;
+  margin-top: 70px;
   margin-left: 400px;
 `;
 
