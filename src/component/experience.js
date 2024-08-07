@@ -99,6 +99,8 @@ function Experience() {
     );
 }
 
+
+
 const Center = styled.div`
 display: flex;
 justify-content: center;
@@ -234,6 +236,8 @@ const Resume = styled.a`
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+
  
   &:hover {
     background-color: rgba(0, 255, 255, 0.1); /* Slight aqua background on hover */

@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Document, Page, pdfjs } from 'react-pdf';
 import Navbar from '../NavBar';
 
-// Set the workerSrc to the location of pdf.worker.min.js
- 
 const Resume = () => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -16,28 +13,64 @@ const Resume = () => {
     return (
         <AppContainer onMouseMove={handleMouseMove}>
             <Background>
-            <GradientOverlay x={mousePos.x} y={mousePos.y} />
-            <Navbar />
-            <Description>
-           Hey :) I moved to the United States in 2017, and since then, I have been working 
-           on my professional career. I started my academic journey in Bergen Community College, 
-           where I attained an Associates in Information Technology. At BCC, I participated in STEM 
-           research, led a Computer Science Project, led the Latin American Association, and volunteered 
-           as an English for a Second Language instructor. 
-          </Description>
-          <Description>
-            At Stevens, I have participated in several activies that have enhanced my CS skills. I have 
-            worked as a Teaching Assistant for Python and Algorithms courses. Moreover, I stucied abroad
-            in Italy, where I participated in a Data Science and Machine Learning research project. 
-          </Description>
+                <GradientOverlay x={mousePos.x} y={mousePos.y} />
+                <Navbar />
+                <Content>
+                  <Title>A bit about my journey</Title>
+                    <Description>
+                        Hey :) I moved to the United States in 2017, and since then, I have been working 
+                        on my professional career. I started my academic journey in Bergen Community College, 
+                        where I attained an Associates in Information Technology. At BCC, I participated in STEM 
+                        research, led a Computer Science Project, led the Latin American Association, and volunteered 
+                        as an English for a Second Language instructor. 
+                    </Description>
+                    <Description>
+                        At Stevens, I have participated in several activities that have enhanced my CS skills. I have 
+                        worked as a Teaching Assistant for Python and Algorithms courses. Moreover, I studied abroad
+                        in Italy, where I participated in a Data Science and Machine Learning research project. Currently, 
+                        I am improving my software engineering skills and focusing on full-stack development. 
+                    </Description>
+                    <Description>
+                        Here's a list of scholarships/recognitions I have been awarded throughout the years:
+                    </Description>
+                    <ImagesRow>
+                        <Image src={require("../images/JKC.png")} alt="jkc" />
+                        <Image src={require("../images/google.png")} alt="google" />
+                        <Image src={require("../images/cafe.png")} alt="caf" />
+                        <Image src={require("../images/elsal.png")} alt="sv" />
+
+                    </ImagesRow>
+                </Content>
             </Background>
         </AppContainer>
     );
 }
 
+const Title = styled.p`
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: -40px;
+
+`;
+const Image = styled.img`
+  width: 310px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+`;
+
+const ImagesRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 25px; /* Space between images */
+  margin-top: 20px;
+`;
+
 const Description = styled.p`
   text-align: center;
-  padding: 400px;
+  padding: 20px;
   font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
   line-height: 2.0;
@@ -46,13 +79,15 @@ const Description = styled.p`
 const Background = styled.div`
   background: #002244;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   color: white;
   text-align: center;
   position: relative;
+  padding: 0 20px; /* Adjust as needed to control side padding */
 `;
+
 const GradientOverlay = styled.div`
   position: absolute;
   top: 0;
@@ -66,9 +101,18 @@ const GradientOverlay = styled.div`
 `;
 
 const AppContainer = styled.section`
-  width: 1z0vw;
-  height: 150vh;
+  width: 100vw;
+  height: 100vh;
   overflow: auto;
+  
+ 
+`;
+
+const Content = styled.div`
+  padding: 170px;
+  position: relative;
+  z-index: 1; /* Ensure content is above gradient overlay */
+  margin-top: 10px; /* Adjust as needed to control top margin */
 `;
 
 export default Resume;
