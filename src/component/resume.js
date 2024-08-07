@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Navbar from '../NavBar';
+import { Document, Page, pdfjs } from 'react-pdf';
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import resume_pdf from "../images/Resume.docx.pdf";
+import Navbar from '../NavBar';
+
+// Set the workerSrc to the location of pdf.worker.min.js
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 const Resume = () => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -41,6 +48,16 @@ const Resume = () => {
 
                     </ImagesRow>
                 </Content>
+                <GradientOverlay x={mousePos.x} y={mousePos.y} />
+                <Navbar />
+                <Container>
+                    <Document
+                        file={resume_pdf}
+                        onLoadSuccess={({ numPages }) => console.log(`Loaded ${numPages} pages`)}
+                    >
+                        <Page pageNumber={1} />
+                    </Document>
+                </Container>
             </Background>
         </AppContainer>
     );
@@ -76,6 +93,13 @@ const Description = styled.p`
   line-height: 2.0;
 `;
 
+const Fonts = styled.p`
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 10px 0; /* Remove top margin and add space below */
+`;
+
 const Background = styled.div`
   background: #002244;
   width: 100%;
@@ -86,6 +110,13 @@ const Background = styled.div`
   text-align: center;
   position: relative;
   padding: 0 20px; /* Adjust as needed to control side padding */
+`;
+
+
+const Container = styled.div`
+    margin-top: 80px;
+    padding: 20px; /* Add padding to avoid clipping */
+    overflow: hidden; /* Prevent scrollbars */
 `;
 
 const GradientOverlay = styled.div`
@@ -113,6 +144,7 @@ const Content = styled.div`
   position: relative;
   z-index: 1; /* Ensure content is above gradient overlay */
   margin-top: 10px; /* Adjust as needed to control top margin */
+  overflow: hidden; /* Prevent overall scrollbars */
 `;
 
 export default Resume;
