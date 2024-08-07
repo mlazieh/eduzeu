@@ -6,8 +6,6 @@ import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import resume_pdf from "../images/Resume.docx.pdf";
 import Navbar from '../NavBar';
 
-// Set the workerSrc to the location of pdf.worker.min.js
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 const Resume = () => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -50,14 +48,7 @@ const Resume = () => {
                 </Content>
                 <GradientOverlay x={mousePos.x} y={mousePos.y} />
                 <Navbar />
-                <Container>
-                    <Document
-                        file={resume_pdf}
-                        onLoadSuccess={({ numPages }) => console.log(`Loaded ${numPages} pages`)}
-                    >
-                        <Page pageNumber={1} />
-                    </Document>
-                </Container>
+               
             </Background>
         </AppContainer>
     );
