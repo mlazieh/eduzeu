@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import resume_pdf from "../images/Resume.docx.pdf";
+import Navbar from '../NavBar';
 
 // Set the workerSrc to the location of pdf.worker.min.js
 pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
@@ -18,19 +19,27 @@ const Resume = () => {
     return (
         <AppContainer onMouseMove={handleMouseMove}>
             <Background>
-            <GradientOverlay x={mousePos.x} y={mousePos.y} />
-
-                <Document
-                    file={resume_pdf}
-                    onLoadSuccess={({ numPages }) => console.log(`Loaded ${numPages} pages`)}
-                >
-                    <Page pageNumber={1} />
-                </Document>
-                <a href={resume_pdf} download="resume.pdf">Download Resume</a>
+                <GradientOverlay x={mousePos.x} y={mousePos.y} />
+                <Navbar />
+                <Container>
+                    <Document
+                        file={resume_pdf}
+                        onLoadSuccess={({ numPages }) => console.log(`Loaded ${numPages} pages`)}
+                    >
+                        <Page pageNumber={1} />
+                    </Document>
+                </Container>
             </Background>
         </AppContainer>
     );
 }
+
+const Fonts = styled.p`
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 10px 0; /* Remove top margin and add space below */
+`;
 
 const Background = styled.div`
   background: #002244;
@@ -42,6 +51,13 @@ const Background = styled.div`
   text-align: center;
   position: relative;
 `;
+
+const Container = styled.div`
+    margin-top: 80px;
+    padding: 20px; /* Add padding to avoid clipping */
+    overflow: hidden; /* Prevent scrollbars */
+`;
+
 const GradientOverlay = styled.div`
   position: absolute;
   top: 0;
@@ -57,7 +73,7 @@ const GradientOverlay = styled.div`
 const AppContainer = styled.section`
   width: 100vw;
   height: 100vh;
-  overflow: auto;
+  overflow: hidden; /* Prevent overall scrollbars */
 `;
 
 export default Resume;
