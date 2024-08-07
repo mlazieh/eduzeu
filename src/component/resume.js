@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import Navbar from '../NavBar';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import resume_pdf from "../images/Resume.docx.pdf";
-import Navbar from '../NavBar';
-
 
 const Resume = () => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -19,9 +16,11 @@ const Resume = () => {
         <AppContainer onMouseMove={handleMouseMove}>
             <Background>
                 <GradientOverlay x={mousePos.x} y={mousePos.y} />
-                <Navbar />
+                <NavbarContainer>
+                    <Navbar />
+                </NavbarContainer>
                 <Content>
-                  <Title>A bit about my journey</Title>
+                    <Title>A bit about my journey</Title>
                     <Description>
                         Hey :) I moved to the United States in 2017, and since then, I have been working 
                         on my professional career. I started my academic journey in Bergen Community College, 
@@ -43,24 +42,26 @@ const Resume = () => {
                         <Image src={require("../images/google.png")} alt="google" />
                         <Image src={require("../images/cafe.png")} alt="caf" />
                         <Image src={require("../images/elsal.png")} alt="sv" />
-
                     </ImagesRow>
                 </Content>
-                <GradientOverlay x={mousePos.x} y={mousePos.y} />
-                <Navbar />
-               
             </Background>
         </AppContainer>
     );
-}
+};
+
+const NavbarContainer = styled.div`
+  position: relative;
+  z-index: 2; /* Ensure the Navbar is above the gradient overlay */
+  width: 100%;
+`;
 
 const Title = styled.p`
   font-family: 'Poppins', sans-serif;
   font-size: 32px;
   font-weight: bold;
   margin-top: -40px;
-
 `;
+
 const Image = styled.img`
   width: 310px;
   height: 150px;
@@ -84,13 +85,6 @@ const Description = styled.p`
   line-height: 2.0;
 `;
 
-const Fonts = styled.p`
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0 0 10px 0; /* Remove top margin and add space below */
-`;
-
 const Background = styled.div`
   background: #002244;
   width: 100%;
@@ -101,13 +95,6 @@ const Background = styled.div`
   text-align: center;
   position: relative;
   padding: 0 20px; /* Adjust as needed to control side padding */
-`;
-
-
-const Container = styled.div`
-    margin-top: 80px;
-    padding: 20px; /* Add padding to avoid clipping */
-    overflow: hidden; /* Prevent scrollbars */
 `;
 
 const GradientOverlay = styled.div`
@@ -126,8 +113,6 @@ const AppContainer = styled.section`
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  
- 
 `;
 
 const Content = styled.div`
