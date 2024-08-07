@@ -15,6 +15,17 @@ const NavigationBar = styled.nav`
   z-index: 1000;
   transition: background 0.3s ease;
   backdrop-filter: blur(10px); /* Apply blur effect */
+
+@media (max-width: 768px) {
+    gap: 2rem;
+    flex-direction: column; /* Stack items vertically */
+  }
+  
+  @media (max-width: 480px) {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const NavLinks = styled.div`
@@ -68,7 +79,7 @@ const Navbar = () => {
         <StyledLink exact to="/" activeClassName="active">Home</StyledLink>
         <StyledLink to="/projects" activeClassName="active">Projects</StyledLink>
         <StyledLink to="/experience" activeClassName="active">Experience</StyledLink>
-        <StyledLink to="/resume" activeClassName="active">Resume</StyledLink>
+        <StyledLink to="/about" activeClassName="active">About me</StyledLink>
       </NavLinks>
     </NavigationBar>
   );

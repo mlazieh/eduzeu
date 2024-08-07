@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Document, Page, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import resume_pdf from "../images/Resume.docx.pdf";
+import Navbar from '../NavBar';
 
 // Set the workerSrc to the location of pdf.worker.min.js
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
-
+ 
 const Resume = () => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -19,18 +17,31 @@ const Resume = () => {
         <AppContainer onMouseMove={handleMouseMove}>
             <Background>
             <GradientOverlay x={mousePos.x} y={mousePos.y} />
-
-                <Document
-                    file={resume_pdf}
-                    onLoadSuccess={({ numPages }) => console.log(`Loaded ${numPages} pages`)}
-                >
-                    <Page pageNumber={1} />
-                </Document>
-                <a href={resume_pdf} download="resume.pdf">Download Resume</a>
+            <Navbar />
+            <Description>
+           Hey :) I moved to the United States in 2017, and since then, I have been working 
+           on my professional career. I started my academic journey in Bergen Community College, 
+           where I attained an Associates in Information Technology. At BCC, I participated in STEM 
+           research, led a Computer Science Project, led the Latin American Association, and volunteered 
+           as an English for a Second Language instructor. 
+          </Description>
+          <Description>
+            At Stevens, I have participated in several activies that have enhanced my CS skills. I have 
+            worked as a Teaching Assistant for Python and Algorithms courses. Moreover, I stucied abroad
+            in Italy, where I participated in a Data Science and Machine Learning research project. 
+          </Description>
             </Background>
         </AppContainer>
     );
 }
+
+const Description = styled.p`
+  text-align: center;
+  padding: 400px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 2.0;
+`;
 
 const Background = styled.div`
   background: #002244;
@@ -55,8 +66,8 @@ const GradientOverlay = styled.div`
 `;
 
 const AppContainer = styled.section`
-  width: 100vw;
-  height: 100vh;
+  width: 1z0vw;
+  height: 150vh;
   overflow: auto;
 `;
 
