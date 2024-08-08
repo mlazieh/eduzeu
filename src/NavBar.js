@@ -71,6 +71,36 @@ const StyledLink = styled(NavLink)`
     z-index: 1;
   }
 `;
+const Download = styled.a`
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 2rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-weight: bold;
+
+  &:hover {
+    color: #30cfd0;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+  }
+
+  &:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &.active {
+    color: #30cfd0;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+  }
+
+  & span {
+    position: relative;
+    z-index: 1;
+  }
+`;
+
 
 const Navbar = () => {
   return (
@@ -79,7 +109,7 @@ const Navbar = () => {
         <StyledLink exact to="/" activeClassName="active">Home</StyledLink>
         <StyledLink to="/projects" activeClassName="active">Projects</StyledLink>
         <StyledLink to="/experience" activeClassName="active">Experience</StyledLink>
-        <StyledLink to="/about" activeClassName="active">About me</StyledLink>
+        <Download href={require("../src/images/resume.pdf")} download="Eduardo_Hernandez_Resume.pdf" activeClassName="active">Resume</Download>
       </NavLinks>
     </NavigationBar>
   );

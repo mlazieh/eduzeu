@@ -90,9 +90,6 @@ function Experience() {
                         </JobDescription>
                      
                      </ExperienceDetails>
-                     <Center>
-                     <Resume  href={require("../images/resume.pdf")} download="Eduardo_Hernandez_Resume.pdf">Download my resume</Resume>
-                     </Center>
                 </Content>
             </Background>
         </AppContainer>
