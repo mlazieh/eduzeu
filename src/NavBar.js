@@ -109,7 +109,7 @@ const Navbar = () => {
         <StyledLink exact to="/" activeClassName="active">Home</StyledLink>
         <StyledLink to="/projects" activeClassName="active">Projects</StyledLink>
         <StyledLink to="/experience" activeClassName="active">Experience</StyledLink>
-        <Download href={require("../src/images/resume.pdf")} download="Eduardo_Hernandez_Resume.pdf" activeClassName="active">Resume</Download>
+        <Download href={require("../src/resume.pdf")} download="Eduardo_Hernandez_Resume.pdf" activeClassName="active">Resume</Download>
       </NavLinks>
     </NavigationBar>
   );

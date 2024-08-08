@@ -21,11 +21,17 @@ function Experience() {
                         <DateRange>May 2024 - August 2024</DateRange>
                         <JobDescription>
                             <ClickableBox>
-                                <Position>Software Engineer</Position>
+                            <Position>
+                                Software Engineer 
+                                <span style={{ margin: '0 15px' }}>|</span> 
+                                Cyasoon
+                              </Position>                                
                                 <DescriptionText>
-                                    At Cyasoon, I have worked as a Full-Stack Software Engineer. My work here includes writing unit 
-                                    tests for all the REST-API routes. I have created routes, written documentation, updated the database, 
-                                    implemented UI features on the front-end and connected as well as implemented APIs in the back-end.
+                                  At Cyasoon, I worked as a Full-Stack Software Engineer, where I created and executed over 80 unit tests using Jest 
+                                  to ensure comprehensive coverage of REST-API services. I developed and debugged backend features with Node.js, 
+                                  and utilized JavaScript to manage video functionality routes integrated with the database. 
+                                  On the front-end, I enhanced UI features with React, connecting them to the backend API for seamless user interactions. Additionally, 
+                                  I authored detailed documentation to clarify unit testing, backend development, and front-end integration processes.
                                 </DescriptionText>
                                 <ButtonContainer>
                                     <ScrollButton>JavaScript</ScrollButton>
@@ -40,10 +46,14 @@ function Experience() {
                         <DateRange>May 2023 - Jun 2023</DateRange>
                         <JobDescription>
                             <ClickableBox>
-                                <Position>Teaching Assistant</Position>
+                                <Position>Teaching Assistant 
+                                <span style={{ margin: '0 15px' }}>|</span> 
+                                  Stevens Insitute of Technology
+                                </Position>
                                 <DescriptionText>
                                     I worked at Stevens Institute of Technology as a TA for a Python Programming course. The course entailed introduction
-                                    to Python programming. I taught +50 students the basics of Python as well as the use of Jupyter Notebooks and introductory Data Science concepts, including linear regression and data engineering. 
+                                    to Python programming. I taught +50 students the basics of Python as well as the use of Jupyter Notebooks and introductor
+                                    y Data Science concepts, including linear regression and data engineering. 
                                 </DescriptionText>
                                 <ButtonContainer>
                                     <ScrollButton>Python</ScrollButton>
@@ -55,11 +65,16 @@ function Experience() {
                         <DateRange>Jun 2023 - August 2023</DateRange>
                         <JobDescription>
                             <ClickableBox>
-                                <Position>Research Assistant</Position>
+                                <Position>Research Assistant 
+                                <span style={{ margin: '0 15px' }}>|</span> 
+                                John Cabot University
+                                </Position>
                                 <DescriptionText>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac venenatis nunc. 
-                                    Donec vehicula lorem eu libero pretium, a malesuada urna scelerisque. Duis et 
-                                    venenatis velit. Proin sed diam nec arcu consectetur tincidunt.
+                                participated in a Data Science project at John Cabot University, where I leveraged advanced Data Engineering
+                                 techniques to process and analyze large-scale datasets. The GradientOverlay was to identify students at risk 
+                                 of dropping out of school and allocate resources to mitigate these risks. Using Machine Learning algorithms, 
+                                 specifically decision trees and linear regression models, we developed predictive analytics to calculate the
+                                 dropout risk percentages. 
                                 </DescriptionText>
                                 <ButtonContainer>
                                     <ScrollButton>Python</ScrollButton>
@@ -71,7 +86,10 @@ function Experience() {
                         <DateRange>Jan 2021 - May 2022</DateRange>
                         <JobDescription>
                             <ClickableBox>
-                                <Position>Software Engineer</Position>
+                                <Position>Software Engineer 
+                                <span style={{ margin: '0 15px' }}>|</span> 
+                                Bergen Community College
+                                </Position>
                                 <DescriptionText>
                                     I worked as a Software Engineer Intern for a cybersecurity project called "Ethical Hacking Using C++"
                                     at Bergen Community College. Here, I wrote malware using C/C++. I used system calls to access low-level
@@ -143,7 +161,7 @@ const Content = styled.div`
 const ExperienceDetails = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr; /* Adjust the ratio as needed */
-  gap: 50px; /* Space between columns */
+  gap: 30px; /* Space between columns */
   margin: 100px auto;
   max-width: 800px; /* Optional: To limit the maximum width */
   margin-top: 70px;
@@ -196,6 +214,8 @@ const Position = styled.p`
 
 const DescriptionText = styled.div`
   margin-bottom: 20px; /* Increased space below description text */
+    text-align: justify;
+
 `;
 
 const ButtonContainer = styled.div`

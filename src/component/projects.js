@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Navbar from '../NavBar';
 import web from "../images/personalweb.png";
+import music from "../images/music.png";
 
 function Projects() {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -52,7 +53,7 @@ function Projects() {
                                     </ButtonContainer>
                                 </JobDescription>
                             </ClickableBox>
-                            <Image src={web} alt="My Music Website" />
+                            <Image src={music} alt="My Music Website" />
                         </ExperienceItem>
 
                         <ExperienceItem>
@@ -145,7 +146,7 @@ const ClickableBox = styled.div`
 
 const DateRange = styled.div`
   font-family: 'Poppins', sans-serif;
-  font-size: 21px;
+  font-size: 20px;
   font-weight: bold;
   color: #ddd; /* Light color for contrast */
   text-align: left;
@@ -190,7 +191,7 @@ const Image = styled.img`
   height: 300px;
   border-radius: 10px;
   transition: filter 0.3s ease; /* Smooth transition for hover effect */
-filter: grayscale(100%) sepia(100%) hue-rotate(155deg) saturate(600%) brightness(110%);
+  filter: sepia(100%) hue-rotate(180deg) saturate(300%) brightness(85%);
  
   margin-top: 27px;
   &:hover {
