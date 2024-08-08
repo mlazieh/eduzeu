@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Navbar from '../NavBar';
+import web from "../images/personalweb.png";
 
 function Projects() {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -16,50 +17,60 @@ function Projects() {
                 <GradientOverlay x={mousePos.x} y={mousePos.y} />
                 <Navbar />
                 <Content>
-                     <ExperienceDetails>
-                        <ClickableBox>
-                            <DateRange>Personal Website</DateRange>
-                            <JobDescription>
-                                Developed an interactive personal website using React. Utilized CSS and JavaScript
-                                animations to create an engaging and user-friendly front-end experience. Designed a responsive 
-                                layout to ensure optimal viewing across various devices. Implemented smooth scrolling and dynamic 
-                                content updates for a seamless user experience. Focused on clean, maintainable code and modern 
-                                web development practices to enhance both performance and scalability.
-                                <ButtonContainer>
-                                    <ScrollButton>JavaScript</ScrollButton>
-                                    <ScrollButton>HTML</ScrollButton>
-                                    <ScrollButton>CSS</ScrollButton>
-                                    <ScrollButton>React</ScrollButton>
-                                </ButtonContainer>
-                            </JobDescription>
-                        </ClickableBox>
-                        <ClickableBox>
-                            <DateRange>My Music Website</DateRange>
-                            <JobDescription>
-                                Developed a website where users can explore the music industry, find out news, see trendings, and discover
-                                new music utilizing the Spotify API. Users can create new playlists based on their favorite genres,
-                                have access to articles regarding their favorite artists, and access to a database with +1000 song suggestions.
-                                <ButtonContainer>
-                                    <ScrollButton>HTML</ScrollButton>
-                                    <ScrollButton>CSS</ScrollButton>
-                                    <ScrollButton>JavaScript</ScrollButton>
-                                </ButtonContainer>
-                            </JobDescription>
-                        </ClickableBox>
-                        <ClickableBox>
-                            <DateRange>Trivia Game</DateRange>
-                            <JobDescription>
-                                Implemented a trivia game in C using sockets. The game allows up to 3 users to connect to the network and play.
-                                Users will compete by answering trivia questions, with their responses being sent to the server for validation. 
-                                The game tracks scores in real-time, providing immediate feedback to players. Designed the system to handle 
-                                multiple connections simultaneously, ensuring a smooth and interactive gaming experience for all participants.
-                                <ButtonContainer>
-                                    <ScrollButton>C</ScrollButton>
-                                    <ScrollButton>Linux OS</ScrollButton>
+                    <ExperienceDetails>
+                        <ExperienceItem>
+                            <ClickableBox>
+                                <DateRange>Personal Website</DateRange>
+                                <JobDescription>
+                                    Developed an interactive personal website using React. Utilized CSS and JavaScript
+                                    animations to create an engaging and user-friendly front-end experience. Designed a responsive 
+                                    layout to ensure optimal viewing across various devices. Implemented smooth scrolling and dynamic 
+                                    content updates for a seamless user experience. Focused on clean, maintainable code and modern 
+                                    web development practices to enhance both performance and scalability.
+                                    <ButtonContainer>
+                                        <ScrollButton>JavaScript</ScrollButton>
+                                        <ScrollButton>HTML</ScrollButton>
+                                        <ScrollButton>CSS</ScrollButton>
+                                        <ScrollButton>React</ScrollButton>
+                                    </ButtonContainer>
+                                </JobDescription>
+                            </ClickableBox>
+                            <Image src={web} alt="Personal Website" />
+                        </ExperienceItem>
 
-                                </ButtonContainer>
-                            </JobDescription>
-                        </ClickableBox>
+                        <ExperienceItem>
+                            <ClickableBox>
+                                <DateRange>My Music Website</DateRange>
+                                <JobDescription>
+                                    Developed a website where users can explore the music industry, find out news, see trendings, and discover
+                                    new music utilizing the Spotify API. Users can create new playlists based on their favorite genres,
+                                    have access to articles regarding their favorite artists, and access to a database with +1000 song suggestions.
+                                    <ButtonContainer>
+                                        <ScrollButton>HTML</ScrollButton>
+                                        <ScrollButton>CSS</ScrollButton>
+                                        <ScrollButton>JavaScript</ScrollButton>
+                                    </ButtonContainer>
+                                </JobDescription>
+                            </ClickableBox>
+                            <Image src={web} alt="My Music Website" />
+                        </ExperienceItem>
+
+                        <ExperienceItem>
+                            <ClickableBox>
+                                <DateRange>Trivia Game</DateRange>
+                                <JobDescription>
+                                    Implemented a trivia game in C using sockets. The game allows up to 3 users to connect to the network and play.
+                                    Users will compete by answering trivia questions, with their responses being sent to the server for validation. 
+                                    The game tracks scores in real-time, providing immediate feedback to players. Designed the system to handle 
+                                    multiple connections simultaneously, ensuring a smooth and interactive gaming experience for all participants.
+                                    <ButtonContainer>
+                                        <ScrollButton>C</ScrollButton>
+                                        <ScrollButton>Linux OS</ScrollButton>
+                                    </ButtonContainer>
+                                </JobDescription>
+                            </ClickableBox>
+                            <Image src={web} alt="Trivia Game" />
+                        </ExperienceItem>
                     </ExperienceDetails>
                 </Content>
             </Background>
@@ -103,16 +114,19 @@ const Content = styled.div`
   margin-left: 100px;
 `;
 
- 
-
 const ExperienceDetails = styled.div`
   display: flex;
-  flex-direction: row; /* Align items horizontally */
-  flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+  flex-direction: column; /* Stack items vertically */
   gap: 20px; /* Space between items */
   margin: 100px auto;
   max-width: 1000px; /* Optional: To limit the maximum width */
   padding: 0 20px; /* Optional: Padding to handle content edges */
+`;
+
+const ExperienceItem = styled.div`
+  display: flex;
+  align-items: flex-start; /* Align items to the start */
+  gap: 20px; /* Space between text and image */
 `;
 
 const ClickableBox = styled.div`
@@ -131,7 +145,7 @@ const ClickableBox = styled.div`
 
 const DateRange = styled.div`
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-size: 21px;
   font-weight: bold;
   color: #ddd; /* Light color for contrast */
   text-align: left;
@@ -145,6 +159,7 @@ const JobDescription = styled.div`
   text-align: left;
   margin-top: 15px;
   text-align: justify;
+  word-wrap: break-word; /* Ensure text wraps within the box */
 `;
 
 const ButtonContainer = styled.div`
@@ -167,6 +182,19 @@ const ScrollButton = styled.button`
   &:hover {
     background-color: rgba(0, 255, 255, 0.1); /* Slight aqua background on hover */
     transform: scale(1.05);
+  }
+`;
+
+const Image = styled.img`
+  width: 500px; /* Adjust based on your image size */
+  height: 300px;
+  border-radius: 10px;
+  transition: filter 0.3s ease; /* Smooth transition for hover effect */
+filter: grayscale(100%) sepia(100%) hue-rotate(155deg) saturate(600%) brightness(110%);
+ 
+  margin-top: 27px;
+  &:hover {
+    filter: none; /* Revert to original colors on hover */
   }
 `;
 
