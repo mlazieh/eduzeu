@@ -8,6 +8,7 @@ import ProgrammingLanguages from '../skillset/skills';
 import Frameworks from '../skillset/frames';
 import Typewriter from 'react-typewriter-effect';
 import SocialMedia from "../connect";
+
 const MainPage = () => {
   const programmingLanguagesRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -46,7 +47,10 @@ const MainPage = () => {
                 cursor={false}
               />
             </Title>
-            <Portrait src={self} />
+            <SocialMediaContainer>
+              <Portrait src={self} />
+              <SocialMedia />
+            </SocialMediaContainer>
             <Degree>
               <Typewriter
                 text="Software Engineer"
@@ -55,7 +59,6 @@ const MainPage = () => {
                 cursor={false}
               />
             </Degree>
-            <SocialMedia />
           </Header>
           <Description>
             Hello! I am a Senior at Stevens Institute of Technology with a robust foundation in mathematical
@@ -69,24 +72,24 @@ const MainPage = () => {
           </Container>
         </Section>
         <Section ref={programmingLanguagesRef}>
-        <SkillsContainer>
-          {isVisible && (
-            <>       
-
-              <ProgrammingLanguages />
-              <Frameworks />
-            </>
-          )}
+          <SkillsContainer>
+            {isVisible && (
+              <>
+                <ProgrammingLanguages />
+                <Frameworks />
+              </>
+            )}
           </SkillsContainer>
         </Section>
       </Background>
     </AppContainer>
   );
 };
-const SkillsContainer = styled.div`
 
+const SkillsContainer = styled.div`
   margin-top: -340px;
-  `;
+`;
+
 const GradientOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -96,15 +99,15 @@ const GradientOverlay = styled.div`
   pointer-events: none;
   background: radial-gradient(circle at ${props => props.x}px ${props => props.y}px, rgba(0, 34, 68, 0.5) 0%, rgba(0, 34, 68, 0) 30%);
   transition: background 0.1s;
-  mix-blend-mode: screen; /* Optional: To blend with background */
+  mix-blend-mode: screen;
 `;
 
 const Container = styled.div`
   width: 100%;
-  height: auto; /* Remove fixed height to avoid whitespace issues */
-  position: relative; /* Allows positioning adjustments */
-  top: -350px; /* Adjust this value to move the button up */
-  text-align: center; /* Center-align the content */
+  height: auto;
+  position: relative;
+  top: -350px;
+  text-align: center;
 `;
 
 const AppContainer = styled.div`
@@ -114,14 +117,13 @@ const AppContainer = styled.div`
 
 const Background = styled.div`
   background: #002244;
-   display: flex;
+  display: flex;
   flex-direction: column;
   color: white;
-   text-align: center;
+  text-align: center;
   overflow: hidden;
   position: relative;
-
-  `;
+`;
 
 const Section = styled.div`
   padding: 50px 0;
@@ -131,15 +133,14 @@ const Section = styled.div`
 const Title = styled.p`
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
-  font-weight: 600px;
+  font-weight: 600;
   margin-top: -40px;
-
 `;
 
 const Degree = styled.p`
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
-  font-weight: 400px;
+  font-weight: 400;
 `;
 
 const Header = styled.div`
@@ -148,6 +149,24 @@ const Header = styled.div`
   align-items: center;
   margin-top: 40px;
   font-family: 'Poppins', sans-serif;
+`;
+
+const SocialMediaContainer = styled.div`
+  background: transparent; /* Transparent background */
+  border: 4px solid #00cfcf; /* Aqua border */
+  border-radius: 50px; /* Capsule shape */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 270px; 
+  width: 250px;
+
+  padding: 10px;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1); /* Enlarge on hover */
+  }
 `;
 
 const Portrait = styled.img`

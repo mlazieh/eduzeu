@@ -70,7 +70,7 @@ function Projects() {
                                     </ButtonContainer>
                                 </JobDescription>
                             </ClickableBox>
-                            <Image src={web} alt="Trivia Game" />
+                            {/* <Image src={web} alt="Trivia Game" /> */}
                         </ExperienceItem>
                     </ExperienceDetails>
                 </Content>

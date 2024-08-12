@@ -25,15 +25,20 @@ const Container = styled.div`
     gap: 25px; /* Adjust gap between images as needed */
     align-items: center; /* Center items vertically */
     height: 100px; /* Adjust height as needed to see the alignment effect */
-    margin-top: -25px;
+    margin-top: -5px;
+   
 `;
+
 
 const Size = styled.img`
     width: 2.2vw;
 `;
 
 const Link = styled.a`
-    text-decoration: none;
+    text-decoration: none;  
+     &:hover {
+    transform: scale(1.1); /* Enlarge on hover */
+  }
 `;
 
 export default SocialMedia;
