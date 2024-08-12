@@ -86,8 +86,9 @@ const MainPage = () => {
   );
 };
 
+
 const SkillsContainer = styled.div`
-  margin-top: -340px;
+  margin-top: -360px;
 `;
 
 const GradientOverlay = styled.div`

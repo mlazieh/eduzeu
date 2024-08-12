@@ -17,6 +17,7 @@ function Experience() {
                 <Navbar />
 
                 <Content>
+                  <AlignItems> 
                     <ExperienceDetails>
                         <DateRange>May 2024 - August 2024</DateRange>
                         <JobDescription>
@@ -108,6 +109,7 @@ function Experience() {
                         </JobDescription>
                      
                      </ExperienceDetails>
+                     </AlignItems>
                 </Content>
             </Background>
         </AppContainer>
@@ -117,7 +119,11 @@ function Experience() {
 
 
  
-
+const AlignItems = styled.div` 
+  align-items: center;
+  justify-content: center
+  margin-top: 90px;
+`;
 const AppContainer = styled.section`
   width: 100vw;
   height: 100vh;
@@ -152,6 +158,7 @@ const Content = styled.div`
   overflow: auto;
   padding: 20px;
   margin-top: 15px;
+  align-items: center;
 `;
 
 const ExperienceDetails = styled.div`
@@ -161,7 +168,6 @@ const ExperienceDetails = styled.div`
   margin: 100px auto;
   max-width: 800px; /* Optional: To limit the maximum width */
   margin-top: 70px;
-  margin-left: 400px;
 `;
 
 const DateRange = styled.div`
