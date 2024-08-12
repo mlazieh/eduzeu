@@ -219,7 +219,7 @@ const fadeInOut = keyframes`
     opacity: 1;
     transform: translateY(0);
   }
-  100% {
+  100% {a
     opacity: 0;
     transform: translateY(5px);
   }
