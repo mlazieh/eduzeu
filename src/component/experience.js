@@ -116,11 +116,7 @@ function Experience() {
 
 
 
-const Center = styled.div`
-display: flex;
-justify-content: center;
-margin-top: 20px;
-`;
+ 
 
 const AppContainer = styled.section`
   width: 100vw;
@@ -243,23 +239,6 @@ const ScrollButton = styled.button`
 `;
 
 
-const Resume = styled.a`
-  padding: 10px 30px; /* Increased padding for better button appearance */
-  font-size: 19px;
-  font-family: 'Poppins', sans-serif;
-  background: transparent; /* Transparent button background */
-  color: #00ffff; /* Font color aqua */
-  border: 2px solid #00ffff; /* Border to make the button visible */
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  text-decoration: none;
 
- 
-  &:hover {
-    background-color: rgba(0, 255, 255, 0.1); /* Slight aqua background on hover */
-    transform: scale(1.05);
-  }
-`;
 
 export default Experience;
