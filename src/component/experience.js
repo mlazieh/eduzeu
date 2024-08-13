@@ -101,7 +101,7 @@ function Experience() {
                                 <ButtonContainer>
                                     <ScrollButton>C++</ScrollButton>
                                     <ScrollButton>C</ScrollButton>
-                                    <ScrollButton>HTML++</ScrollButton>
+                                    <ScrollButton>HTML</ScrollButton>
                                     <ScrollButton>CSS</ScrollButton>
                                     <ScrollButton>Javascript</ScrollButton>
                                 </ButtonContainer>
@@ -246,7 +246,7 @@ const ButtonContainer = styled.div`
   gap: 10px; /* Increased space between buttons */
   margin-top: 10px; /* Space between the button container and the description text */
   flex-wrap: wrap; /* Allow buttons to wrap on small screens */
-  justify-content: center;
+  justify-content: left;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -265,6 +265,7 @@ const ScrollButton = styled.button`
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
   margin: 0; /* Remove additional margin for better alignment */
+  
   
   &:hover {
     background-color: rgba(0, 255, 255, 0.1); /* Slight aqua background on hover */
