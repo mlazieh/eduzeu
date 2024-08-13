@@ -15,12 +15,7 @@ import Typewriter from 'react-typewriter-effect';
 const ProgrammingLanguages = React.forwardRef((props, ref) => (
   <LanguagesContainer ref={ref}>
     <Title>
-        <Typewriter
-              text= "Programming Languages"
-              typeSpeed={50}
-              startDelay={500}
-              cursor={false} // Hide cursor after typing is doneFrameworks and Technologies </Title>
-              />
+      Programming Languages
         </Title>
     <ImagesContainer>
       <ImageWrapper>
@@ -92,19 +87,21 @@ const LanguagesContainer = styled.div`
 
 `;
 
+
 const Title = styled.h3`
-  margin-bottom: 38px;
-  font-size: 15px;
+  margin-bottom: 20px;
+  font-size: 25px;
   color: white;
   font-family: 'Poppins', sans-serif;
-`;
+ `;
+
 
 const ImagesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: -10px;
   width: 60%;
 `;
 
@@ -115,7 +112,7 @@ const ImageWrapper = styled.div`
   margin: 10px;
   width: calc(100% / 5 - 20px); /* Initially fit 5 items per row */
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1200px) 
     width: calc(100% / 4 - 20px); /* Fit 4 items per row on medium screens */
   }
 

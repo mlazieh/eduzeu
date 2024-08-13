@@ -119,10 +119,16 @@ function Experience() {
 
 
  
-const AlignItems = styled.div` 
+const AlignItems = styled.div`
+  display: flex;
   align-items: center;
   justify-content: center
   margin-top: 90px;
+
+    @media (max-width: 768px) {
+    margin-top: 40px;
+  }
+
 `;
 const AppContainer = styled.section`
   width: 100vw;
@@ -168,6 +174,12 @@ const ExperienceDetails = styled.div`
   margin: 100px auto;
   max-width: 800px; /* Optional: To limit the maximum width */
   margin-top: 70px;
+
+    @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* Stack columns vertically on small screens */
+    margin: 20px auto;
+    max-width: 100%;
+  }
 `;
 
 const DateRange = styled.div`
@@ -177,6 +189,11 @@ const DateRange = styled.div`
   color: #ddd; /* Light color for contrast */
   text-align: left;
   margin-top: 25px;
+
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const JobDescription = styled.div`
@@ -217,6 +234,10 @@ const Position = styled.p`
 const DescriptionText = styled.div`
   margin-bottom: 20px; /* Increased space below description text */
     text-align: justify;
+     
+    @media (max-width: 768px) {
+    font-size: 14px;
+  }
 
 `;
 
@@ -224,6 +245,13 @@ const ButtonContainer = styled.div`
   display: flex;
   gap: 10px; /* Increased space between buttons */
   margin-top: 10px; /* Space between the button container and the description text */
+  flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const ScrollButton = styled.button`
@@ -241,6 +269,9 @@ const ScrollButton = styled.button`
   &:hover {
     background-color: rgba(0, 255, 255, 0.1); /* Slight aqua background on hover */
     transform: scale(1.05);
+  }
+     @media (max-width: 768px) {
+    margin: 5px; /* Space between buttons on small screens */
   }
 `;
 

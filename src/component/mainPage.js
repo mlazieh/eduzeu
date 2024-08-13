@@ -1,4 +1,3 @@
-// mainPage.js
 import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Navbar from '../NavBar';
@@ -39,39 +38,41 @@ const MainPage = () => {
         <Navbar />
         <Section>
           <Header>
-            <Title>
-              <Typewriter
-                text="Eduardo Hernandez"
-                typeSpeed={50}
-                startDelay={500}
-                cursor={false}
-              />
-            </Title>
             <SocialMediaContainer>
               <Portrait src={self} />
               <SocialMedia />
             </SocialMediaContainer>
-            <Degree>
-              <Typewriter
-                text="Software Engineer"
-                typeSpeed={100}
-                startDelay={1500}
-                cursor={false}
-              />
-            </Degree>
+            <TextContainer>
+              <Title>
+                <Typewriter
+                  text="Eduardo Hernandez"
+                  typeSpeed={50}
+                  startDelay={500}
+                  cursor={false}
+                />
+              </Title>
+              <Degree>
+                <Typewriter
+                  text="Software Engineer"
+                  typeSpeed={100}
+                  startDelay={1500}
+                  cursor={false}
+                />
+              </Degree>
+              <Description>
+                Hello! I am a Senior at Stevens Institute of Technology with a robust foundation in mathematical
+                and programming concepts. My passion for problem-solving drives me to excel in various aspects
+                of software development. I have extensive experience in testing software, back-end and front-end development, and debugging.
+              </Description>
+            </TextContainer>
           </Header>
-          <Description>
-            Hello! I am a Senior at Stevens Institute of Technology with a robust foundation in mathematical
-            and programming concepts. My passion for problem-solving drives me to excel in various aspects
-            of software development. I have extensive experience in testing software, back-end and front-end development, and debugging.
-          </Description>
-          <Container>
+          <CenterButton>
             <ScrollButton onClick={handleScrollButtonClick}>
               My Skillset <Arrow />
             </ScrollButton>
-          </Container>
+          </CenterButton>
         </Section>
-        <Section ref={programmingLanguagesRef}>
+        <SectionTwo ref={programmingLanguagesRef}>
           <SkillsContainer>
             {isVisible && (
               <>
@@ -80,15 +81,196 @@ const MainPage = () => {
               </>
             )}
           </SkillsContainer>
-        </Section>
+        </SectionTwo>
       </Background>
     </AppContainer>
   );
 };
 
+const CenterButton = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Adjust to 100% to ensure full width alignment */
+  margin-left: 13vw;
+
+  @media (max-width: 768px) {
+    margin-top: 5vw;
+      margin-left: 3vw;
+
+  }
+`;
+
+const AppContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+`;
+
+const Background = styled.div`
+  background: #002244;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+`;
+
+const SectionTwo = styled.div`
+  padding: 9vw 0;
+  margin-top: 2vw;
+
+  @media (max-width: 768px) {
+    padding: 10vw 0;
+    margin-top: 5vw;
+  }
+`;
+
+const Section = styled.div`
+  padding: 5vw 0;
+  margin-top: 2vw;
+
+  @media (max-width: 768px) {
+    padding: 10vw 0;
+    margin-top: 5vw;
+  }
+`;
+
+const Header = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3.5vw;
+  font-family: 'Poppins', sans-serif;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-top: 10vw;
+  }
+`;
+
+const SocialMediaContainer = styled.div`
+  background: transparent;
+  border: 4px solid #00cfcf;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 27vw;
+  width: 22vw;
+  padding: 15px;
+  transition: transform 0.3s;
+  margin-right: 1vw;
+  transform: translateX(4.5vw);
+
+  &:hover {
+    transform: scale(1.1) translateX(5vw);
+  }
+
+  @media (max-width: 768px) {
+    height: 60vw;
+    width: 40vw;
+    margin-right: 0;
+    transform: translateX(0);
+  }
+`;
+
+const Portrait = styled.img`
+  width: 19.5vw;
+  height: 18vw;
+  margin: 0;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  box-shadow: 10px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 768px) {
+    width: 35vw;
+    height: 32vw;
+  }
+`;
+
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
+`;
+
+const Title = styled.p`
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5vw;
+  font-weight: 600;
+  margin-top: -1.5vw;
+
+  @media (max-width: 768px) {
+    font-size: 4vw;
+    gap: 30px;
+  }
+`;
+
+const Degree = styled.p`
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1vw;
+  font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 3.5vw;
+  }
+`;
+
+const Description = styled.p`
+  text-align: center;
+  padding: 0 10vw;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5vw;
+  line-height: 2.5vw;
+  margin-top: -5px;
+
+  @media (max-width: 768px) {
+    font-size: 2vw;
+    padding: 0 5vw;
+    text-align: center;
+  }
+`;
+
+const ScrollButton = styled.button`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 4px auto;
+  padding: 10px 8vw;
+  font-size: 2vw;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #30cfd0, #330867);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+
+  &:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 15vw;
+    font-size: 5vw;
+  }
+`;
 
 const SkillsContainer = styled.div`
-  margin-top: -360px;
+  margin-top: -10vw;
+
+  @media (max-width: 768px) {
+    margin-top: -25vw;
+  }
 `;
 
 const GradientOverlay = styled.div`
@@ -103,113 +285,6 @@ const GradientOverlay = styled.div`
   mix-blend-mode: screen;
 `;
 
-const Container = styled.div`
-  width: 100%;
-  height: auto;
-  position: relative;
-  top: -350px;
-  text-align: center;
-`;
-
-const AppContainer = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
-const Background = styled.div`
-  background: #002244;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-`;
-
-const Section = styled.div`
-  padding: 50px 0;
-  margin-top: 20px;
-`;
-
-const Title = styled.p`
-  font-family: 'Poppins', sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  margin-top: -40px;
-`;
-
-const Degree = styled.p`
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-`;
-
-const Header = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
-  font-family: 'Poppins', sans-serif;
-`;
-
-const SocialMediaContainer = styled.div`
-  background: transparent; /* Transparent background */
-  border: 4px solid #00cfcf; /* Aqua border */
-  border-radius: 50px; /* Capsule shape */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 270px; 
-  width: 250px;
-
-  padding: 10px;
-  transition: transform 0.3s;
-
-  &:hover {
-    transform: scale(1.1); /* Enlarge on hover */
-  }
-`;
-
-const Portrait = styled.img`
-  width: 195px;
-  height: 180px;
-  margin: 0px 0;
-  border-radius: 50%;
-  border: 5px solid transparent;
-  box-shadow: 10px rgba(0, 0, 0, 0.5);
-`;
-
-const Description = styled.p`
-  text-align: center;
-  padding: 400px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  line-height: 2.0;
-  margin-top: -390px;
-`;
-
-const ScrollButton = styled.button`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 4px auto;
-  padding: 10px 55px;
-  font-size: 19px;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #30cfd0, #330867);
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-
-  &:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-  }
-`;
-
 const fadeInOut = keyframes`
   0% {
     opacity: 0;
@@ -219,7 +294,7 @@ const fadeInOut = keyframes`
     opacity: 1;
     transform: translateY(0);
   }
-  100% {a
+  100% {
     opacity: 0;
     transform: translateY(5px);
   }
@@ -227,8 +302,12 @@ const fadeInOut = keyframes`
 
 const Arrow = styled(FaArrowDown)`
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 2vw;
   animation: ${fadeInOut} 1.5s infinite;
+
+  @media (max-width: 768px) {
+    font-size: 4vw;
+  }
 `;
 
 export default MainPage;

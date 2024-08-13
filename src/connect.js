@@ -24,20 +24,20 @@ const Container = styled.div`
     display: flex;
     gap: 25px; /* Adjust gap between images as needed */
     align-items: center; /* Center items vertically */
-    height: 100px; /* Adjust height as needed to see the alignment effect */
+    height: 150px; /* Adjust height as needed to see the alignment effect */
     margin-top: -5px;
    
 `;
 
 
 const Size = styled.img`
-    width: 2.2vw;
+    width: 3.0vw;
 `;
 
 const Link = styled.a`
     text-decoration: none;  
      &:hover {
-    transform: scale(1.1); /* Enlarge on hover */
+    transform: scale(1.5); /* Enlarge on hover */
   }
 `;
 

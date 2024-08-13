@@ -10,13 +10,9 @@ import Typewriter from 'react-typewriter-effect';
 const Frameworks = React.forwardRef((props, ref) => (
     <LanguagesContainer ref={ref}>
       <Title>
-        <Typewriter
-              text= "Frameworks and Technologies"
-              typeSpeed={50}
-              startDelay={500}
-              cursor={false} // Hide cursor after typing is doneFrameworks and Technologies </Title>
-              />
+        Frameworks and Technologies
         </Title>
+    
       <ImagesContainer>
         <ImageWrapper>
         <StyledLink href="https://github.com/eduzeu/website" target="_blank" rel="noopener noreferrer">
@@ -58,12 +54,11 @@ const LanguagesContainer = styled.div`
 `;
 
 const Title = styled.h3`
-  margin-bottom: 15px;
-  font-size: 15px;
+  margin-bottom: -5px;
+  font-size: 25px;
   color: white;
   font-family: 'Poppins', sans-serif;
-  margin-top: -5px;
-`;
+ `;
 
 const ImagesContainer = styled.div`
   display: flex;

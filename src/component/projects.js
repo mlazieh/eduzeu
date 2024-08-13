@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Navbar from '../NavBar';
 import web from "../images/personalweb.png";
 import music from "../images/music.png";
+import trivia from "../images/trivi.png";
 
 function Projects() {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -43,7 +44,7 @@ function Projects() {
                             <ClickableBox>
                                 <DateRange>My Music Website</DateRange>
                                 <JobDescription>
-                                    Developed a website where users can explore the music industry, find out news, see trendings, and discover
+                                    Developed a website where users can explore the music industry, find out news, see trends, and discover
                                     new music utilizing the Spotify API. Users can create new playlists based on their favorite genres,
                                     have access to articles regarding their favorite artists, and access to a database with +1000 song suggestions.
                                     <ButtonContainer>
@@ -70,7 +71,7 @@ function Projects() {
                                     </ButtonContainer>
                                 </JobDescription>
                             </ClickableBox>
-                            {/* <Image src={web} alt="Trivia Game" /> */}
+                            <Image src={trivia} alt="Trivia Game" />
                         </ExperienceItem>
                     </ExperienceDetails>
                 </Content>
@@ -122,12 +123,22 @@ const ExperienceDetails = styled.div`
   margin: 100px auto;
   max-width: 1000px; /* Optional: To limit the maximum width */
   padding: 0 20px; /* Optional: Padding to handle content edges */
+
+  @media (max-width: 768px) {
+    margin: 50px auto; /* Adjust margin for smaller screens */
+    padding: 0 10px; /* Reduce padding for smaller screens */
+  }
 `;
 
 const ExperienceItem = styled.div`
   display: flex;
-  align-items: flex-start; /* Align items to the start */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
   gap: 20px; /* Space between text and image */
+
+  @media (min-width: 769px) {
+    flex-direction: row; /* Align items side by side on larger screens */
+  }
 `;
 
 const ClickableBox = styled.div`
@@ -137,7 +148,8 @@ const ClickableBox = styled.div`
   padding: 20px;
   transition: background-color 0.3s, border-color 0.3s;
   cursor: pointer;
-  
+  width: 100%;
+
   &:hover {
     background-color: rgba(0, 255, 255, 0.1); /* Slight aqua background on hover */
     border-color: #00ffff; /* Aqua border on hover */
@@ -149,7 +161,11 @@ const DateRange = styled.div`
   font-size: 20px;
   font-weight: bold;
   color: #ddd; /* Light color for contrast */
-  text-align: left;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 18px; /* Smaller font size on smaller screens */
+  }
 `;
 
 const JobDescription = styled.div`
@@ -157,10 +173,13 @@ const JobDescription = styled.div`
   font-size: 16px;
   font-weight: normal;
   color: #fff; /* Ensure text is visible */
-  text-align: left;
-  margin-top: 15px;
   text-align: justify;
+  margin-top: 15px;
   word-wrap: break-word; /* Ensure text wraps within the box */
+
+  @media (max-width: 768px) {
+    font-size: 14px; /* Smaller font size on smaller screens */
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -189,13 +208,19 @@ const ScrollButton = styled.button`
 const Image = styled.img`
   width: 500px; /* Adjust based on your image size */
   height: 300px;
-  border-radius: 10px;
-  transition: filter 0.3s ease; /* Smooth transition for hover effect */
-  filter: sepia(100%) hue-rotate(180deg) saturate(300%) brightness(85%);
- 
-  margin-top: 27px;
+  border-radius: 30px;
+  border: 3px solid #00ffff; /* Aqua border color */
+  transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+  
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    display: none; /* Hide images on smaller screens */
+  }
+
   &:hover {
-    filter: none; /* Revert to original colors on hover */
+    transform: scale(1.05);
+    filter: brightness(1.1); /* Optional: Enhance the image brightness on hover */
   }
 `;
 
