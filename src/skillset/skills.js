@@ -10,8 +10,7 @@ import mon from "../images/mongo.png";
 import sql from "../images/sq.png";
 import r from "../images/r.png";
 import java from "../images/vs.png"
-import Typewriter from 'react-typewriter-effect';
-
+ 
 const ProgrammingLanguages = React.forwardRef((props, ref) => (
   <LanguagesContainer ref={ref}>
     <Title>

@@ -5,8 +5,7 @@ import gh from "../images/git.png";
 import React from 'react';
 import styled from 'styled-components';
 import express from "../images/express.png";
-import Typewriter from 'react-typewriter-effect';
-
+ 
 const Frameworks = React.forwardRef((props, ref) => (
     <LanguagesContainer ref={ref}>
       <Title>
