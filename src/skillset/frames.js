@@ -65,7 +65,7 @@ const ImagesContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 29px;
-  width: 60%;
+  width: 56%;
 `;
 
 const StyledLink = styled.a`
@@ -98,8 +98,8 @@ const ImageWrapper = styled.div`
 `;
 const Image = styled.img`
   font-family: 'Poppins', sans-serif;
-  width: 70px;
-  height: 55px;
+  width: 60px;
+  height: 50px;
   transition: transform 0.3s;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for 3D effect */

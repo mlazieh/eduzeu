@@ -101,7 +101,7 @@ const ImagesContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: -10px;
-  width: 60%;
+  width: 55%;
 `;
 
 const ImageWrapper = styled.div`
@@ -130,8 +130,8 @@ const ImageWrapper = styled.div`
 
 const Image = styled.img`
   font-family: 'Poppins', sans-serif;
-  width: 70px;
-  height: 55px;
+  width: 60px;
+  height: 50px;
   transition: transform 0.3s, box-shadow 0.3s;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for 3D effect */
@@ -152,7 +152,7 @@ const Image = styled.img`
 const StyledLink = styled.a`
   text-decoration: none;
   color: inherit;
-`;
+ `;
 const ImageName = styled.span`
   margin-top: 5px;
   font-size: 15px;
