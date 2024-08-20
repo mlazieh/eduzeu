@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from 'react';
-import React, { useRef, useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Navbar from '../NavBar';
 import self from "../images/self.jpeg";
@@ -25,7 +24,6 @@ const MainPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Hide loading screen after 3 seconds
@@ -144,36 +142,6 @@ const LoadingText = styled.p`
   font-size: 2rem;
 `;
 
-const Welcome = styled.button`
-   font-family: 'Poppins', sans-serif;
-  background: transparent; /* Make the button background transparent */
-  color: #00ffff; /* Font color aqua */
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-
-  &:hover {
-    background-color: rgba(0, 255, 255, 0.1); /* Slight aqua background on hover */
-    transform: scale(1.05);
-  }
-`;
-
-const LoadingScreen = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background: #002244;
-  color: white;
-  font-size: 2rem;
-  font-family: 'Poppins', sans-serif;
-  position: absolute;
- 
-`;
-const LoadingText = styled.p`
-  font-size: 2rem;
-`;
-
 const CenterButton = styled.div`
   display: flex;
   justify-content: center;
@@ -201,9 +169,7 @@ const Background = styled.div`
   text-align: center;
   overflow: hidden;
   position: relative;
-   height: 100%;
 
-  
 `;
 
 const SectionTwo = styled.div`
