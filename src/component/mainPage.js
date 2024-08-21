@@ -36,8 +36,8 @@ const MainPage = () => {
   return (
     <AppContainer onMouseMove={handleMouseMove}>
        
-      <Background>
-        <GradientOverlay x={mousePos.x} y={mousePos.y} />
+       <Background isVisible={isVisible}>
+       <GradientOverlay x={mousePos.x} y={mousePos.y} />
         <Navbar />
         <Section>
           <Header>
@@ -121,6 +121,7 @@ const Background = styled.div`
   text-align: center;
   overflow: hidden;
   position: relative;
+  height: ${({ isVisible }) => (isVisible ? 'auto' : '100vh')}; 
 
 `;
 
