@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Navbar from '../NavBar';
 import self from "../images/self.jpeg";
@@ -12,18 +12,8 @@ const MainPage = () => {
   const programmingLanguagesRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Hide loading screen after 3 seconds
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-
-    // Clear timer if component is unmounted
-    return () => clearTimeout(timer);
-  }, []);
-
+  
 
   const handleMouseMove = (e) => {
     const { clientX: x, clientY: y } = e;
@@ -140,6 +130,8 @@ const Background = styled.div`
   text-align: center;
   overflow: hidden;
   position: relative;
+  height: ${({ isVisible }) => (isVisible ? 'auto' : '100vh')}; 
+
 `;
 
 const SectionTwo = styled.div`
