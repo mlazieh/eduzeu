@@ -37,7 +37,9 @@ function Projects() {
                                     </ButtonContainer>
                                 </JobDescription>
                             </ClickableBox>
+                            <a href = "https://github.com/eduzeu/eduzeu.github.io">
                             <Image src={web} alt="Personal Website" />
+                            </a>
                         </ExperienceItem>
 
                         <ExperienceItem>
@@ -54,7 +56,9 @@ function Projects() {
                                     </ButtonContainer>
                                 </JobDescription>
                             </ClickableBox>
+                            <a href = "https://github.com/eduzeu/mymusic">
                             <Image src={music} alt="My Music Website" />
+                            </a>
                         </ExperienceItem>
 
                         <ExperienceItem>
@@ -71,7 +75,9 @@ function Projects() {
                                     </ButtonContainer>
                                 </JobDescription>
                             </ClickableBox>
+                            <a href='https://github.com/eduzeu/trivia'>
                             <Image src={trivia} alt="Trivia Game" />
+                            </a>
                         </ExperienceItem>
                     </ExperienceDetails>
                 </Content>

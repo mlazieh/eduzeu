@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const NavigationBar = styled.nav`
   background: transparent; 
-  padding: 1rem 3rem; /* Adjust padding for a smaller navbar */
+  padding: 0.2rem 3rem; /* Adjust padding for a smaller navbar */
   display: flex;
   justify-content: space-between;
   align-items: center;

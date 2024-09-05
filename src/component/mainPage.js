@@ -130,8 +130,6 @@ const Background = styled.div`
   text-align: center;
   overflow: hidden;
   position: relative;
-  height: ${({ isVisible }) => (isVisible ? 'auto' : '100vh')}; 
-
 `;
 
 const SectionTwo = styled.div`
