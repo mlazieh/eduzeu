@@ -83,7 +83,7 @@ const LanguagesContainer = styled.div`
   text-align: center;
   font-family: 'Poppins', sans-serif;
   margin-top: 40px;
-
+  padding: 0 20px; 
 `;
 
 
@@ -111,20 +111,25 @@ const ImageWrapper = styled.div`
   margin: 10px;
   width: calc(100% / 5 - 20px); /* Initially fit 5 items per row */
 
-  @media (max-width: 1200px) 
+
+  @media (max-width: 1200px) {
     width: calc(100% / 4 - 20px); /* Fit 4 items per row on medium screens */
+    margin: 8px; 
   }
 
   @media (max-width: 900px) {
-    width: calc(100% / 3 - 20px); /* Fit 3 items per row on smaller screens */
+    width: calc(100% / 3 - 16px); /* Fit 3 items per row on smaller screens */
+    margin: 6px;
   }
 
   @media (max-width: 600px) {
-    width: calc(100% / 2 - 20px); /* Fit 2 items per row on small screens */
+    width: calc(100% / 2 - 14px); /* Fit 2 items per row on small screens */
+    margin: 5px;  
   }
 
   @media (max-width: 400px) {
-    width: 100%; /* Fit 1 item per row on very small screens */
+    width: calc(100% - 20px); /* Fit 1 item per row on very small screens */
+    margin: 5px; 
   }
 `;
 
@@ -145,8 +150,8 @@ const Image = styled.img`
   }
 
   @media (max-width: 600px) {
-    width: 70px; /* Adjust image size for smaller screens */
-    height: 50px;
+    width: 50px; /* Adjust image size for smaller screens */
+    height: 40px;
   }
 `;
 const StyledLink = styled.a`
@@ -162,6 +167,13 @@ const ImageName = styled.span`
   
   &:hover {
     transform: scale(1.1);
+  }
+      @media (max-width: 600px) {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  @media (max-width: 400px) {
+    font-size: 13px; /* Further reduce font size on very small screens */
   }
 `;
 

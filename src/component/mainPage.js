@@ -45,16 +45,7 @@ const MainPage = () => {
 
   return (
     <AppContainer onMouseMove={handleMouseMove}>
-        {loading ? (
-        <LoadingScreen>
-          <Welcome><Typewriter
-                  text="Thanks for visiting my website"
-                  typeSpeed={50}
-                  startDelay={500}
-                  cursor={false}
-                /></Welcome>
-        </LoadingScreen>
-      ) : (
+       
       <Background>
         <GradientOverlay x={mousePos.x} y={mousePos.y} />
         <Navbar />
@@ -65,6 +56,8 @@ const MainPage = () => {
               <SocialMedia />
             </SocialMediaContainer>
             <TextContainer>
+            <AdjustCard> 
+
               <Title>
                 <Typewriter
                   text="Eduardo Hernandez"
@@ -73,18 +66,24 @@ const MainPage = () => {
                   cursor={false}
                 />
               </Title>
+              </AdjustCard> 
+
               <Degree>
+              <AdjustCard> 
+
                 <Typewriter
                   text="Software Engineer"
                   typeSpeed={100}
                   startDelay={1500}
                   cursor={false}
                 />
+              </AdjustCard> 
+
               </Degree>
               <Description>
                 Hello! I am a Senior at Stevens Institute of Technology with a robust foundation in mathematical
                 and programming concepts. My passion for problem-solving drives me to excel in various aspects
-                of software development. I have extensive experience in testing software, back-end and front-end development, and debugging.
+                of software development. I have extensive experience in testing software, full stack development, and debugging.
               </Description>
             </TextContainer>
           </Header>
@@ -105,40 +104,14 @@ const MainPage = () => {
           </SkillsContainer>
         </SectionTwo>
       </Background>
-      )}
+  
     </AppContainer>
   );
 };
 
-const Welcome = styled.button`
-   font-family: 'Poppins', sans-serif;
-  background: transparent; /* Make the button background transparent */
-  color: #00ffff; /* Font color aqua */
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-
-  &:hover {
-    background-color: rgba(0, 255, 255, 0.1); /* Slight aqua background on hover */
-    transform: scale(1.05);
-  }
-`;
-
-const LoadingScreen = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background: #002244;
-  color: white;
-  font-size: 2rem;
-  font-family: 'Poppins', sans-serif;
-  position: absolute;
- 
-`;
-const LoadingText = styled.p`
-  font-size: 2rem;
-`;
+const AdjustCard = styled.div`
+  margin-bottom: 25px;
+  `;
 
 const CenterButton = styled.div`
   display: flex;
