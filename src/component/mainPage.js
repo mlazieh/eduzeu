@@ -50,7 +50,7 @@ const MainPage = () => {
 
               <Title>
                 <Typewriter
-                  text="Eduardo Hernandez"
+                  text="Michael Lazieh"
                   typeSpeed={50}
                   startDelay={500}
                   cursor={false}
